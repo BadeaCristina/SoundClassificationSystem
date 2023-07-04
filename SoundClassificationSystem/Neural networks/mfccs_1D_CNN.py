@@ -71,6 +71,7 @@ m.add(Conv1D(128,
 m.add(BatchNormalization())
 m.add(Activation('relu'))
 m.add(MaxPooling1D(pool_size=2, strides=None))
+m.add(Dropout(0.2))
 m.add(Conv1D(128,
                 kernel_size=3,
                 strides=1,
@@ -80,6 +81,7 @@ m.add(Conv1D(128,
 m.add(BatchNormalization())
 m.add(Activation('relu'))
 m.add(MaxPooling1D(pool_size=2, strides=None))
+m.add(Dropout(0.2))
 m.add(Conv1D(256,
                  kernel_size=3,
                  strides=1,
@@ -89,6 +91,7 @@ m.add(Conv1D(256,
 m.add(BatchNormalization())
 m.add(Activation('relu'))
 m.add(MaxPooling1D(pool_size=2, strides=None))
+m.add(Dropout(0.2))
 m.add(Conv1D(512,
                  kernel_size=3,
                  strides=1,
@@ -99,6 +102,7 @@ m.add((Flatten()))
 m.add(BatchNormalization())
 m.add(Activation('relu'))
 m.add(Dense(512, activation='relu')) 
+m.add(Dropout(0.2))
 m.add(Dense(8, activation='softmax'))
 m.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
